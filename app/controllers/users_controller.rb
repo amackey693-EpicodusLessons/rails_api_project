@@ -8,6 +8,14 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
+  def protected
+    if session[:user_id]
+    else
+      flash[:alert] = "You don't even go here, signup!"
+      redirect_to '/signup'
+    end
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save

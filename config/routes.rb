@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root to: 'users#index'
-  
+
   resources :user
+  get '/protected' => 'users#protected'
 
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
@@ -9,6 +10,8 @@ Rails.application.routes.draw do
 
   get '/signup' => 'users#new'
   post '/users' => 'users#create'
+
+  
 
 end
 

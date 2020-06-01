@@ -13,4 +13,17 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
+.box {
+  padding: 50px;
+  margin: 25%;
+  border-radius: 8px ;
+  background-color: white;
+  opacity: 90%;
+}
  
+
+body {
+  background-color: black;
+}
