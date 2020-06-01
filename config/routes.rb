@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
-  resources :users
-    resources :sessions
-  end
+  root to: 'users#index'
+  
+  resources :user
+
+  get '/signin' => 'sessions#new'
+  post '/signin' => 'sessions#create'
+  get '/signout' => 'sessions#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
 end
+
